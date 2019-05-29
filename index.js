@@ -23,6 +23,7 @@ module.exports = {
         name: 'title',
         label: 'Full Name',
         type: 'string',
+        required: true,
         readOnly: true
       },
       {
