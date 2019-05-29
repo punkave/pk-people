@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/punkave/pk-people/issues"
   },
-  "homepage": "https://github.com/punkave/pk-people#readme"
+  "homepage": "https://github.com/punkave/pk-people#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-punkave": "^2.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-punkave": "^0.1.0",
+    "stylelint-declaration-strict-value": "^1.1.2"
+  }
 }

@@ -1,24 +1,18 @@
 module.exports = {
-  name: 'person',
+  name: 'pk-people',
   label: 'Person',
   pluralLabel: 'People',
-  construct: (self, options) => {
+  extend: 'apostrophe-pieces',
+  moogBundle: {
+    modules: ['pk-people-pages', 'pk-people-widgets'],
+    directory: 'lib/modules'
+  },
+  beforeConstruct: (self, options) => {
     options.addFields = [
       {
         name: 'title',
-        label: 'Full Name'
-      },
-      {
-        type: 'string',
-        name: 'firstName',
-        label: 'First Name',
-        required: true
-      },
-      {
-        type: 'string',
-        name: 'lastName',
-        label: 'Last Name',
-        required: true
+        label: 'Full Name',
+        type: 'string'
       }
     ].concat(options.addFields || []);
   }
