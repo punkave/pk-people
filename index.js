@@ -24,7 +24,7 @@ module.exports = {
         label: 'Full Name',
         type: 'string',
         required: true,
-        help: 'Automatically generated from first and last name'
+        help: 'Automatically generated from first and last name, but feel free to edit.'
       },
       {
         name: 'position',
