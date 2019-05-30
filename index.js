@@ -62,7 +62,7 @@ module.exports = {
       {
         name: 'basics',
         label: 'Basics',
-        fields: [ 'firstName', 'lastName', 'title', 'position', 'email', 'tel', 'summary' ]
+        fields: [ 'firstName', 'lastName', 'title', 'image', 'position', 'email', 'tel', 'summary' ]
       },
       {
         name: 'admin',
