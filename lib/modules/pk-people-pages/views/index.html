@@ -4,13 +4,15 @@
     <h1>{{ data.page.title }}</h1>
     {% for piece in data.pieces %}
       <ul class="pk-people-index__list">
-        <li class="pk-people-index__list-item">
-          {# {{ apos.singleton(piece, 'piece.image', 'apostrohe-images', {}) }} #}
-          <h2 class="pk-people-index__list-item-title"><a href="{{ piece._url }}">{{ piece.title }}</a></h2>
-          <p class="pk-people-index__list-item-position">{{ piece.position }}</p>
-          <a href="mailto:{{ piece.email }}" class="pk-people-index__list-item-email">{{ piece.email }}</a>
-          <a href="tel:{{ piece.tel }}" class="pk-people-index__list-item-tel">{{ piece.tel }}</a>
-          <p class="pk-people-index__list-item-tel">{{ piece.summary}}</p>
+        <li class="pk-person">
+          <div class="pk-person__image">
+          {# {{ apos.singleton(piece, 'image', 'apostrophe-images', { edit: false }) }} #}
+          </div>
+          <h2 class="pk-person__fullname"><a href="{{ piece._url }}">{{ piece.title }}</a></h2>
+          <p class="pk-person__position">{{ piece.position }}</p>
+          <a href="mailto:{{ piece.email }}" class="pk-person__email">{{ piece.email }}</a>
+          <a href="tel:{{ piece.tel }}" class="pk-person__tel">{{ piece.tel }}</a>
+          <p class="pk-person__summary">{{ piece.summary}}</p>
         </li>
       </ul>
     {% endfor %}
