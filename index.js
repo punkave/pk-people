@@ -23,7 +23,9 @@ module.exports = {
         name: 'title',
         label: 'Full Name',
         type: 'string',
-        readOnly: true
+        required: true,
+        readOnly: true,
+        help: 'Automatically generated from first and last name'
       },
       {
         name: 'position',
@@ -49,6 +51,17 @@ module.exports = {
         textarea: true
       }
     ].concat(options.addFields || []);
-    // TODO: arrange fields
+    options.arrangeFields = [
+      {
+        name: 'basics',
+        label: 'Basics',
+        fields: [ 'firstName', 'lastName', 'title', 'position', 'email', 'tel', 'summary' ]
+      },
+      {
+        name: 'admin',
+        label: 'Admin',
+        fields: [ 'slug', 'tags', 'published' ]
+      }
+    ].concat(options.arrangeFields || []);
   }
 };
