@@ -24,7 +24,6 @@ module.exports = {
         label: 'Full Name',
         type: 'string',
         required: true,
-        readOnly: true,
         help: 'Automatically generated from first and last name'
       },
       {
