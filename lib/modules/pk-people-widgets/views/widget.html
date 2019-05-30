@@ -42,4 +42,9 @@
       {% endfor %}
     </ul>
   {% endblock %}
+  {% block link %}
+    {% if widget.linkIndex == 'yes' and widget.linkText %}
+      <a class="pk-people-widget__link" href="{{ widget._pieces[0]._parentUrl }}">{{ widget.linkText }}</a>
+    {% endif %}
+  {% endblock %}
 </div>
