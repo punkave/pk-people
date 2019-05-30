@@ -16,7 +16,8 @@ The `pk-people-widgets` module provides an `pk-people` widget, which you can use
 
 These three modules extend `apostrophe-pieces`, `apostrophe-pieces-pages` and `apostrophe-pieces-widgets`, and you can extend them further as well.
 
-Example configuration:
+## Example configuration:
+
 ```
 // in app.js
 // We must declare the bundle!
