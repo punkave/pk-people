@@ -5,7 +5,9 @@
     {% block info %}
       <div class="pk-person__info">
         <div class="pk-person__image">
-        {# {{ apos.singleton(data.piece, 'image', 'apostrophe-images', { edit: false }) }} #}
+        {% if not apos.areas.isEmpty(data.piece, 'image') %}
+          {{ apos.singleton(data.piece, 'image', 'apostrophe-images', { edit: false }) }}
+        {% endif %}
         </div>
         <h1 class="pk-person__title">{{ data.piece.title }}</h1>
         <p class="pk-person__position">{{ data.piece.position }}</p>
