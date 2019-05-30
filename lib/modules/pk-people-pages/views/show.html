@@ -1,3 +1,21 @@
-<div class="pk-people-show">
-  <h1>Name</h1>
-</div>
+{% extends data.outerLayout %}
+
+{% block main %}
+  <div class="pk-people-show">
+    {% block info %}
+      <div class="pk-people-show__info">
+        {# {{ apos.singleton(data.piece, 'piece.image', 'apostrohe-images', {}) }} #}
+        <h1 class="pk-people-show__info-title">{{ data.piece.title }}</h1>
+        <p class="pk-people-show__info-position">{{ data.piece.position }}</p>
+        <a href="mailto:{{ data.piece.email }}" class="pk-people-show__info-email">{{ data.piece.email }}</a>
+        <a href="tel:{{ data.piece.tel }}" class="pk-people-show__info-tel">{{ data.piece.tel }}</a>
+      </div>
+    {% endblock %}
+    {% block summary %}
+      <p class="pk-people-show__summary">{{ data.piece.summary}}</p>
+    {% endblock %}
+    {% block body %}
+      {{ apos.singleton(data.piece, 'text', 'apostrophe-rich-text', {}) }}
+    {% endblock %}
+  </div>
+{% endblock %}

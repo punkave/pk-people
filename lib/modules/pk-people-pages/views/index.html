@@ -1,6 +1,22 @@
-<div class="pk-people-index">
-  <h1>Page title</h1>
-  <ul>
-    <li>Person</li>
-  </ul>
-</div>
+{% extends data.outerLayout %}
+{% block main %}
+  <div class="pk-people-index">
+    <h1>{{ data.page.title }}</h1>
+    {% for piece in data.pieces %}
+    {{ apos.log(piece) }}
+      <ul class="pk-people-index__list">
+        <li class="pk-people-index__list-item">
+          {# {{ apos.singleton(piece, 'piece.image', 'apostrohe-images', {}) }} #}
+          <h2 class="pk-people-index__list-item-title"><a href="{{ piece._url }}">{{ piece.title }}</a></h2>
+          <p class="pk-people-index__list-item-position">{{ piece.position }}</p>
+          <a href="mailto:{{ piece.email }}" class="pk-people-index__list-item-email">{{ piece.email }}</a>
+          <a href="tel:{{ piece.tel }}" class="pk-people-index__list-item-tel">{{ piece.tel }}</a>
+          <p class="pk-people-index__list-item-tel">{{ piece.summary}}</p>
+        </li>
+      </ul>
+    {% endfor %}
+    {% import 'apostrophe-pager:macros.html' as pager with context %}
+    {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+  </div>
+{% endblock %}
+
