@@ -8,6 +8,7 @@ module.exports = {
     directory: 'lib/modules'
   },
   beforeConstruct: (self, options) => {
+    options.contextual = true;
     options.addFields = [
       {
         name: 'firstName',
@@ -27,12 +28,19 @@ module.exports = {
         help: 'Automatically generated from first and last name, but feel free to edit.'
       },
       {
+        name: 'image',
+        label: 'Image',
+        type: 'singleton',
+        widgetType: 'apostrophe-images',
+        options: {
+          limit: 1
+        }
+      },
+      {
         name: 'position',
         label: 'Position/Job Title',
         type: 'string'
       },
-      // TODO: photo - how do we allow this to be
-      // overridden project level
       {
         name: 'email',
         label: 'Email',
