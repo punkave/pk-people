@@ -27,6 +27,8 @@
                 {% if piece.tel %}
                   <a href="tel:{{ piece.tel }}" class="pk-person__tel">{{ piece.tel }}</a>
                 {% endif %}
+              {% endblock %}
+              {% block summary %}
                 {% if piece.summary %}
                   <p class="pk-person__summary">{{ piece.summary }}</p>
                 {% endif %}
