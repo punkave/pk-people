@@ -1,6 +1,6 @@
 {
   "name": "pk-people",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A base class for people in ApostropheCMS",
   "main": "index.js",
   "scripts": {
