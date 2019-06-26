@@ -41,4 +41,41 @@ modules: {
 
 ## Classes
 
-## Extends
+## Extending
+
+Example of project-level extension...
+```
+// in app.js
+...
+modules: {
+  ...
+  'my-people': { extend: 'pk-people' },
+  'my-people-pages': { extend: 'pk-people-pages' },
+  'my-people-widgets': { extend: 'pk-people-widgets' }
+}
+...
+```
+
+Adding a field to people...
+`lib/modules/my-people/index.js`
+```
+module.exports = {
+  addFields: [
+    {
+      name: 'newField',
+      label: 'New Field',
+      type: 'string'
+    }
+  ]
+};
+```
+
+Extending a template...
+`lib/modules/my-people-pages/views/index.html`
+```
+{% extends 'indexBase.html' %}
+
+{% block header %}
+<h1>HELLO</h1>
+{% endblock %}
+```
