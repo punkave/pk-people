@@ -79,3 +79,5 @@ Extending a template...
 <h1>HELLO</h1>
 {% endblock %}
 ```
+
+The `pk-people-widgets` module has some special conveniences. You can set a `namespace` option to override the widget class names. There are also `beforeWidget` and `afterWidget` blocks for you to override for conveniently wrapping the widget with your own custom markup.
