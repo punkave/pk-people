@@ -1,40 +1,43 @@
 {% set widget = data.widget %}
+{% set widgetClass = data.options.namespace or 'pk-people-widget' %}
 
-<div class="pk-people-widget">
+{% block beforeWidget %}{% endblock %}
+
+<div class="{{ widgetClass }}">
   {% block header %}
     {% if widget.title %}
-      <h2 class="pk-people-widget__title">{{ widget.title }}</h2>
+      <h2 class="{{ widgetClass }}__title">{{ widget.title }}</h2>
     {% endif %}
   {% endblock %}
   {% block list %}
-    <ul class="pk-people-widget__list">
+    <ul class="{{ widgetClass }}__list">
       {% for piece in widget._pieces %}
         {% block person %}
-          <li class="pk-person">
+          <li class="{{ widgetClass }}__person">
             {% block image %}
               {% if not apos.areas.isEmpty(piece, 'image') %}
-                <div class="pk-person__image">
+                <div class="{{ widgetClass }}__image">
                   {{ apos.singleton(piece, 'image', 'apostrophe-images', { edit: false }) }}
                 </div>
               {% endif %}
             {% endblock %}
             {% block info %}
-              <h3 class="pk-person__fullname">
+              <h3 class="{{ widgetClass }}__fullname">
                 <a href="{{ piece._url }}">{{ piece.title }}</a>
               </h3>
               {% if piece.position %}
-                <p class="pk-person__position">{{ piece.position }}</p>
+                <p class="{{ widgetClass }}__position">{{ piece.position }}</p>
               {% endif %}
               {% if piece.email %}
-                <a class="pk-person__email" href="mailto:{{ piece.email }}">{{ piece.email }}</a>
+                <a class="{{ widgetClass }}__email" href="mailto:{{ piece.email }}">{{ piece.email }}</a>
               {% endif %}
               {% if piece.tel %}
-                <a class="pk-person__tel" href="tel:{{ piece.tel }}">{{ piece.tel }}</a>
+                <a class="{{ widgetClass }}__tel" href="tel:{{ piece.tel }}">{{ piece.tel }}</a>
               {% endif %}
             {% endblock %}
             {% block summary %}
               {% if piece.summary %}
-                <p class="pk-person__summary">{{ piece.summary }}</p>
+                <p class="{{ widgetClass }}__summary">{{ piece.summary }}</p>
               {% endif %}
             {% endblock %}
           </li>
@@ -44,7 +47,9 @@
   {% endblock %}
   {% block link %}
     {% if widget.linkIndex == 'yes' and widget.linkText %}
-      <a class="pk-people-widget__link" href="{{ widget._pieces[0]._parentUrl }}">{{ widget.linkText }}</a>
+      <a class="{{ widgetClass }}__link" href="{{ widget._pieces[0]._parentUrl }}">{{ widget.linkText }}</a>
     {% endif %}
   {% endblock %}
 </div>
+
+{% block afterWidget %}{% endblock %}
